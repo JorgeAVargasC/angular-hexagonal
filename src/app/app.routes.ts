@@ -7,22 +7,22 @@ import { HomeComponent } from './dashboard/home/home.component'
 import { ProductsComponent } from './dashboard/products/products.component'
 
 export const routes: Routes = [
-	{ path: '', redirectTo: 'auth', pathMatch: 'full' },
-	{ path: 'auth', component: AuthComponent },
-	{
-		path: 'dashboard',
-		component: DashboardComponent,
-		children: [
-			{
-				path: 'home',
-				component: HomeComponent
-			},
-			{
-				path: 'products',
-				component: ProductsComponent
-			}
-		]
-	},
-	{ path: '404', component: PageNotFoundComponent },
-	{ path: '**', redirectTo: '404' }
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: 'auth', component: AuthComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'products',
+        component: ProductsComponent
+      }
+    ]
+  },
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '404' }
 ]
