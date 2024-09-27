@@ -1,10 +1,14 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { IFindAllProductsResponse } from '../shared/domain'
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-products-list',
   standalone: true,
-  imports: [],
-  templateUrl: './products-list.component.html',
-  styleUrl: './products-list.component.css'
+  imports: [NgOptimizedImage],
+  templateUrl: './products-list.component.html'
 })
-export class ProductsListComponent {}
+export class ProductsListComponent {
+  @Input()
+  products: IFindAllProductsResponse = []
+}
