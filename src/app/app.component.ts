@@ -19,6 +19,7 @@ import { InputIconModule } from 'primeng/inputicon'
 import { ButtonModule } from 'primeng/button'
 import { TagModule } from 'primeng/tag'
 import { ProductsListComponent } from './dashboard/products/components'
+import { CardModule } from 'primeng/card'
 
 @Component({
   selector: 'app-root',
@@ -43,7 +44,9 @@ import { ProductsListComponent } from './dashboard/products/components'
     ButtonModule,
     IconFieldModule,
     InputIconModule,
-    TagModule
+    TagModule,
+    CardModule,
+    InputTextModule
   ],
   providers: [],
   templateUrl: './app.component.html',
