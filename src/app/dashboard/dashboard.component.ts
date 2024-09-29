@@ -1,11 +1,21 @@
-import { Component } from '@angular/core'
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router'
+import { Component, OnInit } from '@angular/core'
+import { MenuItem } from 'primeng/api'
+import { dashboardRoutes } from '../app.routes'
+import { SharedModule } from '../shared/modules'
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, RouterOutlet],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  imports: [SharedModule],
+  templateUrl: './dashboard.component.html'
 })
-export class DashboardComponent {}
+export class DashboardComponent implements OnInit {
+  items: MenuItem[] = []
+
+  ngOnInit() {
+    this.items = dashboardRoutes.map(({ path, title }) => ({
+      label: `${title}`,
+      routerLink: path
+    }))
+  }
+}

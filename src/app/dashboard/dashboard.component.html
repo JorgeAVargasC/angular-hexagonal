@@ -1,24 +1,3 @@
-<p>dashboard works!</p>
-<nav>
-  <ul>
-    <li>
-      <a
-        routerLink="home"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-      >
-        Home
-      </a>
-    </li>
-    <li>
-      <a
-        routerLink="products"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-      >
-        Products
-      </a>
-    </li>
-  </ul>
-</nav>
+<p-menubar [model]="items" />
+<p-scrolltop />
 <router-outlet></router-outlet>

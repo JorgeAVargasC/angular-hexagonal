@@ -5,7 +5,8 @@ import { IFindAllProductsPayload, IFindAllProductsResponse } from '../domain'
 @Injectable({ providedIn: 'root' })
 export class ProductsService {
   constructor(private httpClient: HttpClient) {}
-  public products: IFindAllProductsResponse = []
+
+  products: IFindAllProductsResponse = []
 
   findAll(payload?: IFindAllProductsPayload) {
     const params = new HttpParams({
@@ -14,9 +15,6 @@ export class ProductsService {
 
     this.httpClient
       .get<IFindAllProductsResponse>('products', { params })
-      .subscribe((products) => {
-        console.log(products)
-        this.products = products
-      })
+      .subscribe((products) => (this.products = products))
   }
 }

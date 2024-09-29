@@ -1,2 +1,19 @@
-<app-products-filters></app-products-filters>
+<div class="flex items-center justify-between">
+  <app-products-filters></app-products-filters>
+
+  <p-button
+    label="Add product"
+    size="small"
+    (onClick)="handleOpenDrawer()"
+  />
+</div>
+
+<p-drawer
+  [visible]="drawer"
+  position="end"
+  (onHide)="handleCloseDrawer()"
+>
+  <h1>Hiii Drawer</h1>
+</p-drawer>
+
 <app-products-list [products]="products"></app-products-list>

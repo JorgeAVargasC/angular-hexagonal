@@ -6,12 +6,13 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms'
+import { InputTextModule } from 'primeng/inputtext'
 
 @Component({
   selector: 'app-products-filters',
   standalone: true,
   templateUrl: './products-filters.component.html',
-  imports: [ReactiveFormsModule]
+  imports: [ReactiveFormsModule, InputTextModule]
 })
 export class ProductsFiltersComponent implements OnInit {
   form: FormGroup<{

@@ -1,18 +1,15 @@
-<div>
+<div class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-3">
   @for (product of products; track product.id) {
     <p-card
       [subheader]="product.title"
       [header]="product.price.toString()"
-      [style]="{ width: '25rem', overflow: 'hidden' }"
     >
       <p-header>
         <p-image
           [alt]="product.title"
           [src]="product.images[0]"
-          [previewImageSrc]="product.images[0]"
           width="100%"
           height="150"
-          [preview]="true"
         />
       </p-header>
       <p>{{ product.description }}</p>
