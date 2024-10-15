@@ -38,7 +38,8 @@ import { DrawerModule } from 'primeng/drawer'
     CardModule,
     MenubarModule,
     ScrollTopModule,
-    DrawerModule
+    DrawerModule,
+    DialogModule
   ],
   exports: [
     TableModule,

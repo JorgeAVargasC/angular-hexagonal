@@ -4,11 +4,12 @@ import { IFindAllProductsResponse } from './shared/domain'
 import { ProductsListComponent } from './components'
 import { ProductsFiltersComponent } from './components/products-filters/products-filters.component'
 import { PrimeNgModule } from '../../shared/modules'
+import { ProductsModalComponent } from "./components/products-modal/products-modal.component";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [ProductsListComponent, ProductsFiltersComponent, PrimeNgModule],
+  imports: [ProductsListComponent, ProductsFiltersComponent, PrimeNgModule, ProductsModalComponent],
   templateUrl: './products.component.html'
 })
 export class ProductsComponent implements OnInit {
