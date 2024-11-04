@@ -10,7 +10,7 @@ import { SharedModule } from './shared/modules'
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  constructor(private config: PrimeNGConfig) {
+  constructor(private readonly config: PrimeNGConfig) {
     this.config.theme.set({
       preset: Aura,
       options: {

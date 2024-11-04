@@ -2,13 +2,14 @@
   (click)="showDialog()"
   label="Show"
   size="small"
+  onkeypress="return false;"
 />
 
 <p-dialog
   header="Edit Profile"
   [modal]="true"
-  [(visible)]="visible"
-  [style]="{ width: '25rem' }"
+  [visible]="true"
+  class="border z-50"
 >
   <span>Update your information.</span>
   <div class="flex items-center gap-4 mb-4">
@@ -42,10 +43,12 @@
       label="Cancel"
       severity="secondary"
       (click)="visible = false"
+      onkeypress="return false;"
     />
     <p-button
       label="Save"
       (click)="visible = false"
+      onkeypress="return false;"
     />
   </div>
 </p-dialog>

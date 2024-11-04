@@ -16,6 +16,12 @@ export const dashboardRoutes: Routes = [
     path: 'products',
     title: 'Products',
     component: ProductsComponent
+  },
+  {
+    path: 'lazy-route',
+    title: 'Lazy route',
+    loadChildren: () =>
+      import('./dashboard/lazy-route/lazy-route.module').then((m) => m.LazyRouteModule)
   }
 ]
 

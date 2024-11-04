@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpParams } from '@angular/common/http'
 import { IFindAllProductsPayload, IFindAllProductsResponse } from '../domain'
+import { Observable, BehaviorSubject, of } from 'rxjs'
+import { catchError, tap } from 'rxjs/operators'
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService {
-  constructor(private httpClient: HttpClient) {}
+  private readonly productsSubject = new BehaviorSubject<IFindAllProductsResponse>([])
+  products$ = this.productsSubject.asObservable()
 
-  products: IFindAllProductsResponse = []
+  constructor(private readonly httpClient: HttpClient) {}
 
-  findAll(payload?: IFindAllProductsPayload) {
-    const params = new HttpParams({
-      fromObject: { ...payload }
-    })
+  findAll(payload?: IFindAllProductsPayload): Observable<IFindAllProductsResponse> {
+    const params = new HttpParams({ fromObject: { ...payload } })
 
-    this.httpClient
-      .get<IFindAllProductsResponse>('products', { params })
-      .subscribe((products) => (this.products = products))
+    return this.httpClient.get<IFindAllProductsResponse>('products', { params }).pipe(
+      tap((products) => this.productsSubject.next(products)),
+      catchError((error) => {
+        console.error('Error fetching products', error)
+        return of([])
+      })
+    )
   }
 }

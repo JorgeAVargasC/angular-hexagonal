@@ -18,6 +18,7 @@ import { CardModule } from 'primeng/card'
 import { MenubarModule } from 'primeng/menubar'
 import { ScrollTopModule } from 'primeng/scrolltop'
 import { DrawerModule } from 'primeng/drawer'
+import { ChipModule } from 'primeng/chip'
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { DrawerModule } from 'primeng/drawer'
     MenubarModule,
     ScrollTopModule,
     DrawerModule,
-    DialogModule
+    DialogModule,
+    ChipModule
   ],
   exports: [
     TableModule,
@@ -59,7 +61,9 @@ import { DrawerModule } from 'primeng/drawer'
     CardModule,
     MenubarModule,
     ScrollTopModule,
-    DrawerModule
+    DrawerModule,
+    DialogModule,
+    ChipModule
   ]
 })
 export class PrimeNgModule {}
